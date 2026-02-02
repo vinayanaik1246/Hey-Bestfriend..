@@ -44,36 +44,27 @@
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.85);
-      display: none;
+      display: none;           /* hidden initially */
       align-items: center;
       justify-content: center;
       flex-direction: column;
       color: white;
       z-index: 999;
-      animation: fadeIn 0.6s ease;
     }
 
+    /* IMAGE hidden initially */
     .overlay img {
       width: 220px;
       height: 320px;
       border-radius: 20px;
       margin-bottom: 20px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      display: none;
     }
 
     .overlay h1 {
       font-size: 32px;
       margin-bottom: 10px;
-    }
-
-    .overlay p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
   </style>
 </head>
@@ -94,15 +85,20 @@
 
   <!-- FULLSCREEN PROPOSAL -->
   <div class="overlay" id="proposal">
-    <img src="vinaya.jpg" alt="Valentine">
+    <img id="proposalImg" src="vinaya.jpg" alt="Valentine">
     <h1>She said YES 💍💖</h1>
     <p>Bestfriends forever 🫂</p>
   </div>
 
   <script>
     function sayYes() {
-      document.getElementById("proposal").style.display = "flex";
+      const overlay = document.getElementById("proposal");
+      const img = document.getElementById("proposalImg");
 
+      overlay.style.display = "flex";  // show fullscreen
+      img.style.display = "block";     // show image AFTER yes
+
+      // fullscreen mode
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
       }
