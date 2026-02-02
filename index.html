@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💖</title>
+  <head>
+<body>
+
+  <div class="card">
+    <h2>Chaitanya 💗<br>Will you be my Valentine?</h2>
+
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" onmouseover="moveNo()">No 🙈</button>
+
+    <p style="color:#ff4d88;margin-top:10px;">
+      "No" seems a bit shy 😈
+    </p>
+  </div>
+
+<script>
+  function sayYes() {
+    window.location.href =
+      "https://wa.me/918169164659?text=Yes! I will be your Valentine 💖🥰";
+  }
+
+  function moveNo() {
+    const btn = document.querySelector('.no');
+    btn.style.position = "absolute";
+    btn.style.top = Math.random()*80 + "%";
+    btn.style.left = Math.random()*80 + "%";
+  }
+</script>
+
+</body>
+</html>
